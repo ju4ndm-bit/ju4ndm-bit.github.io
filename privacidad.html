@@ -106,6 +106,7 @@
       <ul>
         <li><strong>Datos de procesos de contratación:</strong> estados, fechas, actividades y demás información pública de los procesos gestionados.</li>
         <li><strong>Datos de los miembros del equipo:</strong> nombre y número de teléfono, cuando el usuario los registra para recibir notificaciones.</li>
+        <li><strong>Datos de la cuenta de Google:</strong> nombre y dirección de correo electrónico, obtenidos al iniciar sesión con Google para identificar al usuario y habilitar la sincronización.</li>
         <li><strong>Datos técnicos mínimos:</strong> identificador del dispositivo y marcas de tiempo, usados para sincronizar los cambios entre los equipos del equipo.</li>
       </ul>
       <p>
@@ -125,13 +126,28 @@
         <li>Se limitan a información interna del trabajo de contratación.</li>
       </ul>
 
-      <h2>4. Almacenamiento y sincronización</h2>
+      <h2>4. Inicio de sesión con Google y sincronización</h2>
       <p>
         Los datos se guardan <strong>localmente</strong> en el equipo donde se ejecuta la Aplicación.
         Para compartir la información entre los equipos del mismo grupo de trabajo, la Aplicación
         sincroniza los cambios a través de <strong>Google Drive</strong> del titular, aplicando
         <strong>cifrado de extremo a extremo</strong>: los datos viajan cifrados y solo pueden leerse con
         la clave del equipo, que nunca se comparte con Google ni con terceros.
+      </p>
+      <p>
+        El <strong>inicio de sesión con Google</strong> se usa únicamente para identificar al usuario
+        (nombre y correo) y autorizar la sincronización. El acceso a Google Drive se limita al ámbito
+        <code>drive.file</code>: la Aplicación <strong>solo puede ver y modificar los archivos que ella
+        misma crea</strong> para la sincronización, y <strong>no tiene acceso al resto de los archivos</strong>
+        del Google Drive del usuario.
+      </p>
+      <p>
+        <strong>Uso limitado de los datos de Google:</strong> el uso y la transferencia que la Aplicación
+        hace de la información recibida de las APIs de Google se ajustan a la
+        <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Política de Datos de Usuario de los Servicios de las API de Google</a>,
+        incluidos sus requisitos de Uso Limitado (<em>Limited Use</em>). La Aplicación no utiliza estos
+        datos para publicidad y no los transfiere a terceros salvo lo estrictamente necesario para prestar
+        el servicio de sincronización, cumplir la ley o como parte de una operación autorizada por el titular.
       </p>
 
       <h2>5. Con quién se comparte la información</h2>
